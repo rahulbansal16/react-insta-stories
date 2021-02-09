@@ -5,7 +5,7 @@ import ProgressCtx from './../context/Progress'
 import GlobalContext from './../context/Global'
 import StoriesContext from './../context/Stories'
 
-export default () => {
+const ProgressArray = () => {
     const [count, setCount] = useState<number>(0)
     const { currentId, next, videoDuration, pause } = useContext<ProgressContext>(ProgressCtx)
     const { defaultInterval, onStoryEnd, onStoryStart, onAllStoriesEnd } = useContext<GlobalCtx>(GlobalContext);
@@ -13,7 +13,14 @@ export default () => {
 
     useEffect(() => {
         setCount(0)
-    }, [currentId, stories])
+    }, [currentId])
+
+    useEffect(() => {
+        setCount(0)
+        return () => {
+            cancelAnimationFrame(animationFrameId.current)
+        }
+    },[stories])
 
     useEffect(() => {
         if (!pause) {
@@ -37,7 +44,7 @@ export default () => {
         if (countCopy < 100) {
             animationFrameId.current = requestAnimationFrame(incrementCount)
         } else {
-            storyEndCallback()
+            // storyEndCallback()
             if (currentId === stories.length - 1) {
                 allStoriesEndCallback()
             }
@@ -92,3 +99,5 @@ const styles = {
         filter: 'drop-shadow(0 1px 8px #222)'
     }
 }
+
+export default ProgressArray

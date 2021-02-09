@@ -6,16 +6,20 @@ import Story from './Story'
 import ProgressArray from './ProgressArray'
 import { GlobalCtx, StoriesContext as StoriesContextInterface } from './../interfaces'
 
-export default function () {
+ const Container = () => {
     const [currentId, setCurrentId] = useState<number>(0)
     const [pause, setPause] = useState<boolean>(true)
     const [bufferAction, setBufferAction] = useState<boolean>(true)
-    const [videoDuration, setVideoDuration] = useState<number>(0)
+    const [videoDuration, setVideoDuration] = useState<number>(4000)
 
     let mousedownId = useRef<any>();
 
     const { width, height, loop, currentIndex, isPaused, keyboardNavigation } = useContext<GlobalCtx>(GlobalContext);
     const { stories } = useContext<StoriesContextInterface>(StoriesContext);
+
+    useEffect(() => {
+        return () => mousedownId.current && clearTimeout(mousedownId.current)
+    }, [stories])
 
     useEffect(() => {
         if (typeof currentIndex === 'number') {
@@ -146,3 +150,5 @@ const styles = {
         display: 'flex'
     }
 }
+
+export default Container;

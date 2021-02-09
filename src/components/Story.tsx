@@ -12,7 +12,7 @@ const Story = (props: StoryProps) => {
 	const rendererMessageHandler = (type: string, data: any) => {
 		switch (type) {
 			case 'UPDATE_VIDEO_DURATION':
-				props.getVideoDuration(data.duration);
+				props.getVideoDuration(data.duration|| 4000);
 				return { ack: 'OK' as 'OK' }
 		}
 	}
