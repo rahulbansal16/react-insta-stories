@@ -14,7 +14,7 @@ import { GlobalCtx, StoriesContext as StoriesContextInterface } from './../inter
 
     let mousedownId = useRef<any>();
 
-    const { width, height, loop, currentIndex, isPaused, keyboardNavigation } = useContext<GlobalCtx>(GlobalContext);
+    const { height, loop, currentIndex, isPaused, keyboardNavigation } = useContext<GlobalCtx>(GlobalContext);
     const { stories } = useContext<StoriesContextInterface>(StoriesContext);
 
     useEffect(() => {
@@ -111,7 +111,7 @@ import { GlobalCtx, StoriesContext as StoriesContextInterface } from './../inter
     }
 
     return (
-        <div style={{ ...styles.container, ...{ width, height } }}>
+        <div style={{ ...styles.container, ...{height } }} className="reactInstaStory">
             <ProgressContext.Provider value={{
                 bufferAction: bufferAction,
                 videoDuration: videoDuration,

@@ -56,7 +56,6 @@ const generateStories = (stories: Story[], renderers: { renderer: Renderer, test
 };
 
 ReactInstaStories.defaultProps = {
-    width: 360,
     height: 640,
     defaultInterval: 4000
 }
