@@ -16,7 +16,7 @@ export const renderer: Renderer = ({ story, action, isPaused, config }) => {
         setLoaded(true);
         action('play');
     }
-
+ 
     return <WithHeader story={story} globalHeader={config.header}>
         <WithSeeMore story={story} action={action}>
             <img style={computedStyles} src={story.url} onLoad={imageLoaded} />
@@ -59,7 +59,7 @@ const styles = {
 
 export const tester: Tester = (story) => {
     return {
-        condition: !story.content && (!story.type || story.type === 'image'),
+        condition: !story.content && (story.type === 'image'),
         priority: 2
     }
 }
