@@ -46,7 +46,7 @@ export const renderer: Renderer = ({ story, action, config }) => {
                        }}
                        autoSize="true" 
                        value={story.text}
-                       >{story.text}</TextArea>
+                       />
                 </div>
              </div>
             {
