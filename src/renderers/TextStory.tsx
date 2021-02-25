@@ -25,7 +25,7 @@ export const renderer: Renderer = ({ story, action, config }) => {
                 style={{
                      width:'100%',
                      height:'100%',
-                    backgroundColor: story.backgroundColor
+                    backgroundColor: story.backgroundColor || 'black'
                 }}
                 ></div>
                 <div style={{position:'relative'}}>
