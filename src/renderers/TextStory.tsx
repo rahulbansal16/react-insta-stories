@@ -4,6 +4,7 @@ import WithHeader from './wrappers/withHeader';
 const input = require('antd');
 const { TextArea } = input.Input;
 import WithSeeMore from './wrappers/withSeeMore';
+// CSivYv4k8WV33E290IZG WMudfZUR5G - test story to be used for making some great optimizations
 
 export const renderer: Renderer = ({ story, action, config }) => {
     const { width, height, storyStyles } = config;
@@ -45,7 +46,7 @@ export const renderer: Renderer = ({ story, action, config }) => {
                        color:'white',
                        }}
                        autoSize="true" 
-                       value={story.text}
+                       value={story.status}
                        />
                 </div>
              </div>
