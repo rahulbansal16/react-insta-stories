@@ -88,7 +88,7 @@ export interface StoryState {
 export interface Story {
     url?: string;
     backgroundColor?: string,
-    text?: string,
+    status?: string,
     seeMore?: Function;
     seeMoreCollapsed?: React.ComponentType<{ toggleMore: (show: boolean) => void, action: Action }>;
     header?: Header;
