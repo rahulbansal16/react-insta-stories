@@ -50,25 +50,6 @@ export const renderer: Renderer = ({ story, action, config }) => {
                        />
                 </div>
              </div>
-            {
-                <div
-                    style={{
-                        width: width,
-                        height: height,
-                        position: "absolute",
-                        left: 0,
-                        top: 0,
-                        background: "rgba(0, 0, 0, 0.9)",
-                        zIndex: 9,
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        color: "#ccc"
-                    }}
-                >
-                  {/* /  {loader || <div className={globalStyle.spinner} />} */}
-                </div>
-            }
         </WithSeeMore>
     </WithHeader>
 }
