@@ -41,7 +41,8 @@ const styles = {
 		display: "flex",
 		position: "relative",
 		overflow: "hidden",
-		alignItems: "center"
+		alignItems: "center",
+		flexDirection: "column"
 	},
 	storyContent: {
 		width: "auto",
