@@ -26,7 +26,7 @@ export const renderer: Renderer = ({ story, action, isPaused, config }) => {
                     <TextArea
                     style={{
                         position:'absolute',
-                        top:'-70vh',
+                        top:'-75vh',
                         left:'0px',
                         fontSize:'30px',
                         bordered: false,
